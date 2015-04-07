@@ -1,0 +1,45 @@
+
+{
+  "name": "eslint-plugin-smells",
+  "version": "1.0.0",
+  "author": "Elijah Manor <elijah.manor+npm@gmail.com>",
+  "description": "ESLint rules for JavaScript Smells",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit-test",
+    "lint": "eslint ./",
+    "unit-test": "istanbul cover --dir reports/coverage _mocha tests/**/*.js -- --reporter dot",
+    "coveralls": "cat ./reports/coverage/lcov.info | coveralls"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elijahmanor/eslint-plugin-smells"
+  },
+  "homepage": "https://github.com/elijahmanor/eslint-plugin-smells",
+  "bugs": "https://github.com/elijahmanor/eslint-plugin-smells/issues",
+  "devDependencies": {
+    "coveralls": "2.11.2",
+    "eslint": "0.18",
+    "eslint-tester": "0.6.0",
+    "istanbul": "0.3.11",
+    "mocha": "2.2.1"
+  },
+  "keywords": [
+    "eslint-plugin",
+    "eslintplugin",
+    "eslint",
+    "smells"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/elijahmanor/eslint-plugin-smells/master/LICENSE"
+    }
+  ]
+}
