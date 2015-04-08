@@ -16,8 +16,7 @@ var eslint = require('eslint').linter,
 // Tests
 // ------------------------------------------------------------------------------
 
-var HARMFUL = 'Do not assign this to another variable.';
-var TYPE = 'SwitchStatement';
+var ERROR = 'Do not assign this to another variable.';
 var eslintTester = new ESLintTester(eslint);
 
 eslintTester.addRuleTest('lib/rules/no-this-assign', {
@@ -31,7 +30,7 @@ eslintTester.addRuleTest('lib/rules/no-this-assign', {
   invalid: [
     {
       code: 'function foo(e) { var that = this; e.forEach(function() { that.bar(); }); }',
-      errors: [{message: HARMFUL, type: TYPE}]
+      errors: [{message: ERROR, type: 'VariableDeclarator'}]
     }
   ]
 });
