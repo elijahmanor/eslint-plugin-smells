@@ -11,7 +11,7 @@ Install [ESLint](https://www.github.com/eslint/eslint) either locally or globall
 
     npm install eslint
 
-If you installed `ESLint` globally, you have to install React plugin globally too. Otherwise, install it locally.
+If you installed `ESLint` globally, you have to install `eslint-plugin-smells` plugin globally too. Otherwise, install it locally.
 
     $ npm install eslint-plugin-smells
 
@@ -42,14 +42,14 @@ Finally, enable all of the rules that you would like to use.
 
 # List of supported rules
 
-* [no-switch](docs/rules/no-switch.md): Prevent use of `switch` statement
+* [no-switch](docs/rules/no-switch.md):
 * [no-complex-switch-case](docs/rules/no-complex-switch-case.md):
 * [no-setinterval](docs/rules/no-setinterval.md):
 * [no-this-assign](docs/rules/no-this-assign.md):
+* [no-complex-string-concat](docs/rules/no-complex-string-concat.md):
 
 ## To Do
 
-* [no-complex-string-concat](docs/rules/no-this-assign.md):
 * [no-complex-chaining]():
 
 
