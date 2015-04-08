@@ -16,29 +16,21 @@ var eslint = require('eslint').linter,
 // Tests
 // ------------------------------------------------------------------------------
 
-var HARMFUL = 'switch can be harmful.';
+var HARMFUL = 'Do not assign this to another variable.';
 var TYPE = 'SwitchStatement';
 var eslintTester = new ESLintTester(eslint);
 
-eslintTester.addRuleTest('lib/rules/no-switch', {
+eslintTester.addRuleTest('lib/rules/no-this-assign', {
   // Examples of code that should not trigger the rule
   valid: [
-    'function doSomething(e) { var f = e; }',
-    'function doSomething() { var f = doSomething; }',
-    'function foo() { } function doSomething() { var f = foo; }'
+    'function foo(e) { this.bar(); }',
+    'function foo(e) { e.forEach(function() {}, this); }',
+    'function foo(e) { e.call(this, "test"); }'
   ],
   // Examples of code that should trigger the rule
   invalid: [
     {
-      code: 'var option = 0; switch(option) { case "a": break; }',
-      errors: [{message: HARMFUL, type: TYPE}]
-    },
-    {
-      code: 'var option = 0; switch(option) { case "a": option++; break; }',
-      errors: [{message: HARMFUL, type: TYPE}]
-    },
-    {
-      code: 'function doSomething(option) { switch(option) { case "a": break; } }',
+      code: 'function foo(e) { var that = this; e.forEach(function() { that.bar(); }); }',
       errors: [{message: HARMFUL, type: TYPE}]
     }
   ]

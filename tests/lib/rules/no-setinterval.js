@@ -16,11 +16,11 @@ var eslint = require('eslint').linter,
 // Tests
 // ------------------------------------------------------------------------------
 
-var HARMFUL = 'switch can be harmful.';
-var TYPE = 'SwitchStatement';
+var HARMFUL = 'setInterval can be harmful.';
+var TYPE = 'CallExpression';
 var eslintTester = new ESLintTester(eslint);
 
-eslintTester.addRuleTest('lib/rules/no-switch', {
+eslintTester.addRuleTest('lib/rules/no-setinterval', {
   // Examples of code that should not trigger the rule
   valid: [
     'function doSomething(e) { var f = e; }',
@@ -30,15 +30,11 @@ eslintTester.addRuleTest('lib/rules/no-switch', {
   // Examples of code that should trigger the rule
   invalid: [
     {
-      code: 'var option = 0; switch(option) { case "a": break; }',
+      code: 'window.setInterval(function() {}, 1000);',
       errors: [{message: HARMFUL, type: TYPE}]
     },
     {
-      code: 'var option = 0; switch(option) { case "a": option++; break; }',
-      errors: [{message: HARMFUL, type: TYPE}]
-    },
-    {
-      code: 'function doSomething(option) { switch(option) { case "a": break; } }',
+      code: 'setInterval(function() {}, 1000);',
       errors: [{message: HARMFUL, type: TYPE}]
     }
   ]
