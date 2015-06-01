@@ -47,11 +47,7 @@ Finally, enable all of the rules that you would like to use.
 * [no-setinterval](docs/rules/no-setinterval.md):
 * [no-this-assign](docs/rules/no-this-assign.md):
 * [no-complex-string-concat](docs/rules/no-complex-string-concat.md):
-
-## To Do
-
-* [no-complex-chaining]():
-
+* [no-complex-chaining](docs/rules/no-complex-chaining.md):
 
 # License
 
