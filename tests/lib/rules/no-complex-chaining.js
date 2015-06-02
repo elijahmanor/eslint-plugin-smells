@@ -16,7 +16,7 @@ var eslint = require('eslint').linter,
 // Tests
 // ------------------------------------------------------------------------------
 
-var ERROR = 'Too complex string concatenation.';
+var ERROR = 'Too complex chaining.';
 var eslintTester = new ESLintTester(eslint);
 
 eslintTester.addRuleTest('lib/rules/no-complex-chaining', {
