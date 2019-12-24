@@ -11,11 +11,35 @@ switch () {
   case: break;
   default: break;
 }
+
+function getPetTreat(pet) {
+  var food;
+
+  switch (pet) {
+    case 'cat':
+      food = 'tuna';
+      break;
+    case 'lizard':
+      food = 'crickets';
+      break;
+    default:
+      food = 'we don\'t know';
+  }
+
+  return food
+}
 ```
 
 The following patterns are not considered warnings:
 
 ```js
+function getPetTreat(pet) {
+  var petTreats = {
+    cat: 'tuna',
+    lizard: 'crickets',
+  };
+  return petTreats[pet] || 'we don\'t know';
+}
 ```
 
 ## When Not To Use It
