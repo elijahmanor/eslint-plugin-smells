@@ -42,12 +42,12 @@ Finally, enable all of the rules that you would like to use.
 
 # List of supported rules
 
-* [no-switch](docs/rules/no-switch.md):
-* [no-complex-switch-case](docs/rules/no-complex-switch-case.md):
-* [no-setinterval](docs/rules/no-setinterval.md):
-* [no-this-assign](docs/rules/no-this-assign.md):
-* [no-complex-string-concat](docs/rules/no-complex-string-concat.md):
-* [no-complex-chaining](docs/rules/no-complex-chaining.md):
+* [no-switch](docs/rules/no-switch.md): disallow the use of the switch statement
+* [no-complex-switch-case](docs/rules/no-complex-switch-case.md): disallow the use of complex switch statements
+* [no-setinterval](docs/rules/no-setinterval.md): disallow the use of setInterval
+* [no-this-assign](docs/rules/no-this-assign.md): disallow assignment of `this` to a variable
+* [no-complex-string-concat](docs/rules/no-complex-string-concat.md): prevent the use of complex string concatenation
+* [no-complex-chaining](docs/rules/no-complex-chaining.md): prevent the use of complex chains
 
 # License
 

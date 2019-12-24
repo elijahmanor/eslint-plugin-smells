@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for no-switch rule.
+ * @fileoverview Tests for no-complex-string-concat rule.
  * @author Elijah Manor
  * @copyright 2015 Elijah Manor. All rights reserved.
  */
